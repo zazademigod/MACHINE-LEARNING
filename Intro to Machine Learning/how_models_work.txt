@@ -1,0 +1,19 @@
+					DECISION TREES
+decision trees are the basic building blocks for some of the best models for data science.
+lets look at a basic decision tree, A basic scenario of a question about a house and the response affect the price 
+		"does the house have more than two bedrooms?'
+	(NO)							(YES)
+PREDICTED PRICE :$178000				PREDICTED PRICE: $188,000
+
+
+the above example allows us see how a basic decision tree works, the answer gives a deecision that impacts the price.
+
+in the house example, it divides houses into 2 categories, the predicted price for any house under consideration is the historical aerage price od houses in the same category.
+
+The step of capturing patterns from data is called fitting or training the model.
+The data used to fit the model is called the Training data.
+
+IMPROVING DECISION TREES
+To capture more factors in the decision tree, we use a tee that has more splits. These are called "deeper trees".
+
+to access a decision tree, we folow the characteristic/factor we want down the tee, the point at the bottom is where we make a prediction and it's called a leaf.
