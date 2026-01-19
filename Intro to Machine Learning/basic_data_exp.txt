@@ -1,0 +1,18 @@
+this first libary we'll be using is pandas, this is mostly used in familiarising oneself with the data, it is the primary tool data scientists use fo exploring and manipulating data
+
+pandas is mostly imported as pd
+
+#####
+import pandas as pd
+
+
+the most impoortant part of the pandas library is the dataframe, A dataframe holds the type of data one might think of as a table. This is similar to a sheet in Excl or an SQL database 
+
+as an example we'll look at data about home prices
+#first we save the iflepath to variable for easier access
+
+melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv"
+#read and store data in dataframee titled melbourne_data
+melbourne_data = pd.read_csv(melbourne_file_path)
+#print a summary of the data in melbourne data
+melbourne_data.describe()
