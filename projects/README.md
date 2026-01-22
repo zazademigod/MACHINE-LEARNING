@@ -1,0 +1,2 @@
+My first project to test my knowledge is a caesar cipher that encrypts by shifting the value of alphabets by whatever specified key when we call the function.
+to use the function, you simply run the code and input  as values as desired
