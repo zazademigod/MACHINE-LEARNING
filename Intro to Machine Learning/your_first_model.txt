@@ -1,0 +1,25 @@
+SELECTING DATA FOR MODELING
+
+to choose variables/columns we'll first need to see a list of all the columns using the *columns property
+
+ex. ajao_housing.columns
+
+in some case of missing values in our data *dropna property helps to remove missing values
+
+ex. ajao_housing.dropna(axis=0)
+
+for now we'll only consider two ways of selecting the subset of data we want to use 
+1. dot notation, which we use to select the "prediction target"
+2. selecting with a column list, which we use to select the features
+
+ex. 
+selecting the prediction target, dot notation is used to select the column we want to predict, by convention the prediction target is called y.
+
+y = ajao_housing.price 
+the above saves the house prices in somewhat of a single column dataframe
+
+CHOOSING FEATURES
+
+features are things we want to analyze the target by, essentially the columns we want to determine the house prices by
+
+for now we'll build a model with a handful features
