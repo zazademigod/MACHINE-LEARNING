@@ -1,0 +1,42 @@
+This lesson is about using model validation to improve the quality of built models
+
+the relevant measure of model quality is predictive accuracy
+There are many metrics for summarising model quality, but i'll start with one called Mean Absolute Error
+
+in house prediction for example, the prediction error for each house is:
+error = actual-predicted
+
+so if a house cost $250,000 and your model predicted $180,000 the error is $70,000
+
+
+with MAE we take the absolute value of each error, this converts each error into a positive number. we then take the average of those absolute errors, this is our measure of model quality and can be said in plain text as "on average, our predictions are off by about X"
+
+to calculate the MAE, we first need a model
+
+then for ex.
+
+from sklearn.metrics import mean_absolute_error
+
+predicted_home_prices = ajao_model.predict(X)
+mean_absolute_error(y, predicted_home_prices)s
+
+
+VALIDATION 
+
+from sklearn.model_selection import train_test_split
+
+#then we split the data into training data and validation data
+
+train_X, val_X, train_y, val_y = train_test_split(X, y, random_state = 0)
+
+#define the model
+
+ajao_model = DecisionTreeRegressor()
+
+#fit the model
+ajao_model.fit(train_X, train_y)
+ 
+#then get predicted prices on validatiion data
+val_prediction = ajao_model.predct(val_X)
+
+print(mean_absolute_error(val_y, val_prediction)

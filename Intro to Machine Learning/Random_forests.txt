@@ -1,0 +1,30 @@
+a lot o ftrees will overfit because each prediction is coming from hostorical data from only th few houses at it's leaf. But a shallow tree will perform poorly beacause it'll fail to capture as many distinctions in the raw data.
+
+Even today, most sophisticated models still have issues between overfitting and underfitting, but many models have clever ideas to get better performance, Random forests is an example
+
+RANDOM FORESTS 
+
+The random forest uses many trees, and makes the prediction by averaging the predictions of each component tree.
+Generally it has much better predictive acuracy than a single decision tree annd works well with default parameters.
+
+We build a random forest similar to how we build a decision tree model in sckit learn - This time we use the RandomForestRegressor class instead of the DecisionTreeRegressor.
+
+
+example:
+
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error
+
+forest_model = RandomForestRegressor(random_state=1)
+forest_model.fit(train_X, train_y)
+aj_preds = forets_model.predict(val_X)
+
+prinT(mean_absolue_eror(val_y, aj_preds))
+
+
+
+
+
+
+
+

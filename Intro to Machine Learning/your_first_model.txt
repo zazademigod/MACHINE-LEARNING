@@ -22,4 +22,46 @@ CHOOSING FEATURES
 
 features are things we want to analyze the target by, essentially the columns we want to determine the house prices by
 
-for now we'll build a model with a handful features
+for now we'll build a model with a handful features, we select multiple features by providing a list of column names inside brackets,  they should be strings with quotes
+ex. 
+ajao_features = ['rooms', 'landsize', "latitude", "longtitude"]
+
+by convention this data is called X
+
+X = ajao_housing[ajao_features]
+
+before any other thing, we review the data we want to use, the .head() method and the .describe() method
+
+ex.
+X.describe(), this does all the big maths per column...
+1. count	How many non-empty rows are in that column and returns the following:
+2. mean	The average value.
+3. std	Standard deviation (how spread out the numbers are).
+4. min / max	The smallest and largest values.
+5. 25%, 50%, 75%	Percentiles (the 50% mark is the median).
+
+X.head(),  this gives the first 5 rows of the data,  can also be modiified to give a needed number of rows
+
+
+scikit-learn library is used to create our model, this library is called as sklearn when coding
+
+STEPS TO BUILDING AND USING A MODEL
+
+1. define: what type of model it'll be, decision tree? some other type? some other parameters of the model type are specified too
+2. fit: capture patterns from provided data
+3. predict
+4. evaluate: determine how accurate the model's predictions are
+
+example of defining a decision tree with sklearn
+
+from sklearn.tree import DecisionTreeRegressor
+
+#define the model, specify number of random state to ensue same results each run
+ajao_model = DecisionTreeRegressor(random_state = 1)
+
+#fit the model
+ajao_model.fit(X, y)
+
+to predict for example the prices of the first 5 rows of the data we do 
+
+print(ajao_model.predict(X.head()))

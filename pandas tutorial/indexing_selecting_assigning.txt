@@ -1,0 +1,70 @@
+One of the first thing to learn in working with data in python is how to go about selecting the data points relevant to you quickly and effectively
+
+In python we access the property of an object by acessing it as an attributr. A 'book' object, for example, might have a 'title' property, which we can access by calling book.title.
+
+Columns in a pandas datafame work similarly.
+
+Example: 
+
+sample = pd.read_csv(file_path)
+new_file = sample.column #"column" is the name of a column in the DataFrame
+
+alternatively, like accessing data in a python dict by index, ie test_dict['index"].
+
+We can use same in a DataFrame, 
+example:
+
+new_file = sample['column']
+
+this would give us the single column table or better still series named "column"
+
+
+now to select a specific data from the aleady selected column, all we need do is index again with the position of the target.
+
+example
+
+
+target = sample['column'][0] #this selects the first entry in the column
+
+INDEXING IN PANDAS
+
+the indexing we've been using are standard python index ecosystem, pandas has it's own accessor operators, "loc" and "iloc". For more complex operations these are what we're are supposed to be using.
+
+Pandas indexing works in one of two paradigms. The first is index-based selection: his is selecting data based on it's numerical position in the DataFrame. "iloc" follows this paradigm.
+
+
+to select the first row in a dataframe, the following may be utilised
+
+sample.iloc[0] #this returns the first row
+
+new_file.iloc[:10] #this returns the first 10 rows in the dataframe
+
+Note: in native python indexing and referencing, we move in column first he row next direction, but "iloc" and "loc" do the opposite, row first, column next.
+
+USING ILOC(Index based selection)
+
+to fetch the first 5 rows of the first column in a dataframe, we do 
+
+sample.iloc[:5, 0] #this uses just one squae bracket but seperates the rown and column by comma
+
+to reference some specific indexes in a dataframe we use for example,
+
+sample.iloc[[2, 3, 5, 6, 9]] #This returns the 2nd, 3rd, 5th, 6th, and 9th rows
+
+we can also trim it down to return the first column of each of these rows like this,
+
+sample.iloc[[2, 3, 5, 6, 9], 0] #this returns the first column of each of the indexed rows
+
+USING LOC(Location based selection)
+
+
+
+
+
+
+
+
+
+
+
+

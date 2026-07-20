@@ -1,0 +1,29 @@
+first OVERFITTING
+
+this phenomenom occurs when the decision tre is too deep, such that the divisions yield very few number of objects to learn from(in our example, houses), the system just memorises them and as such is unreliable to predict new data
+
+next UNDERFITTING	 
+
+this also works similarly, when the decision tree is too shallown there is a wide variety of objects to learn from, and if there is too few a split the model doesn't learn adequately and as such would be unreliable 
+
+we can use an utility function to help compare MAE from different max_leaf_nodes
+
+ 
+from sklearn.metrics import mean_absolute_error
+from sklearn.tree import DecisionTreeRegressor
+
+def get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):
+    model = DecisionTreeRegressor(max_leaf_nodes = max_leaf_nodes, random_state = 0)
+    model.fit(train_X, train_y)
+    preds_val = model.predict(val_X)
+    mae = mean_absolute_error(val_y, preds_val)
+    return mae
+
+
+this after we've defined, read the csv file and split into training and validation data would give us the mae according to the max leaf node
+
+to compare with different max leaf nodes we can use a for loop
+
+for max_leaf_nodes in [5, 50, 500, 5000]:
+    my_mae = get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y)
+    print(f'Max leaf nodes: {max_leaf_nodes} \t\t Mean Absolute Error: {my_mae}')
